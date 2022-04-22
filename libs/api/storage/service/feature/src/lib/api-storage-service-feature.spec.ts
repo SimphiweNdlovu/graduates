@@ -32,7 +32,7 @@ it('Should be thruthy', async () => {
   expect(resolver.getFile).toHaveBeenCalled();
 });
 
-it('To be truthy delete', async () => {
+it('should return 0', async () => {
   jest
     .spyOn(resolver, 'deleteFile')
     .mockImplementation(
@@ -41,7 +41,7 @@ it('To be truthy delete', async () => {
     );
 
     expect(resolver.deleteFile).not.toHaveBeenCalled();
-  expect(await resolver.deleteFile("1","CV")).toBeTruthy();
+  expect(await resolver.deleteFile("1","CV")).toEqual(0);
   expect(resolver.deleteFile).toHaveBeenCalled();
 });
 
